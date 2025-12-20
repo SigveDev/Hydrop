@@ -3,6 +3,8 @@
     { "src": "dist/server/server.js", "use": "@vercel/node" }
   ],
   "routes": [
+    { "src": "/(manifest.json|robots.txt)", "dest": "public/$1" },
+    { "src": "/public/(.*)", "dest": "public/$1" },
     { "src": "/(.*)", "dest": "dist/server/server.js" }
   ]
 }
